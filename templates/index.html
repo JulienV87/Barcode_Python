@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PictFact Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>PictFact Scanner</h1>
+    <div id="videoContainer">
+        <img src="{{ url_for('video_feed') }}" id="videoElement" />
+    </div>
+    <div id="result">Scannez un code-barres ou importez une photo.</div>
+    <form id="upload-form" method="post" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="image" accept="image/*">
+        <button type="submit">Importer et scanner</button>
+    </form>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
